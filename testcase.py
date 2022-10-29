@@ -87,7 +87,6 @@ def delete_user(id):
     workers.delete()
   return jsonify(workers.to_json())
 
-  
 app.add_url_rule('/healthcheck', 'healthcheck', view_func=lambda: health.run())
 if __name__ == "__main__":
   app.run(debug=True)
