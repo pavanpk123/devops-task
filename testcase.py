@@ -87,44 +87,6 @@ def delete_user(id):
     workers.delete()
   return jsonify(workers.to_json())
 
-# class Batch(db.Document):
-#   Names = db.StringField()
-#   Course = db.StringField()
-#   def to_json(self):
-#     return {"Names": self.Names,
-#         "Course": self.Course,}
-# @app.route('/batch/', methods=['GET'])
-# def get_batch():
-#   print('1')
-#   batch1 = Batch.objects()
-#   if not batch1:
-#     return jsonify({'error': 'data not found'})
-#   else:
-#     return jsonify(batch1)
-# @app.route('/batch/', methods=['POST'])
-# def add_batch():
-#   record = json.loads(request.data)
-#   batch1 = Batch(Names=record['Names'],
-#         Course=record['Course'])
-#   batch1.save()
-#   return jsonify(batch1)
-
-# @app.route('/batch/<id>', methods=['PUT'])
-# def put_batch():
-#   record = json.loads(request.data)
-#   batch1 = Batch(Names=record['Names'],
-#         Course=record['Course'])
-#   batch1.save()
-#   return jsonify(batch1)
-
-# @app.route('/batch/<id>', methods=['DELETE'])
-# def delete_batch():
-#   record = json.loads(request.data)
-#   batch1 = Batch(Names=record['Names'],
-#         Course=record['Course'])
-#   batch1.save()
-#   return jsonify(batch1)
-  
 app.add_url_rule('/healthcheck', 'healthcheck', view_func=lambda: health.run())
 if __name__ == "__main__":
   app.run(debug=True)
