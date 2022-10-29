@@ -26,13 +26,13 @@ class Workers(db.Document):
         "Work": self.Work,
         "WorkerId" : self.WorkerId}
 
-@app.route("/")
+@app.route("/user/")
 def root_path():
   return("Welcome")
 
 def test_names():
     client = app.test_client()
-    url = '/'
+    url = '/user/'
     response = client.get(url)
     assert response.get_data() == b'Welcome'
 
